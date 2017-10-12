@@ -69,7 +69,7 @@ exports.updateStore = async (req, res) => {
   req.flash(
     'success',
     `successfully updated <strong>${store.name}</strong>.
-    <a href="/stores/${store.slug}"> View Store </a>`
+    <a href="/store/${store.slug}"> View Store </a>`
   );
   res.redirect(`/stores/${store.id}/edit`);
 };
