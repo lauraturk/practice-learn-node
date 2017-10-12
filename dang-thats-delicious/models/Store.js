@@ -6,7 +6,7 @@ const storeSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'Please enter a store name!'
+    required: 'Please enter a store name!',
   },
   slug: String,
   description: {
@@ -16,22 +16,25 @@ const storeSchema = new mongoose.Schema({
   tags: [String],
   created: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   location: {
     type: {
       type: String,
-      default: 'Point'
+      default: 'Point',
     },
-    coordinates: [{
-      type: Number,
-      required: 'You must supply coordinates'
-    }],
+    coordinates: [
+      {
+        type: Number,
+        required: 'You must supply coordinates',
+      },
+    ],
     address: {
       type: String,
-      required: 'You must supply an address!'
-    }
-  }
+      required: 'You must supply an address!',
+    },
+  },
+  photo: String,
 });
 
 storeSchema.pre('save', function(next) {
